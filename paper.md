@@ -65,60 +65,104 @@ t_vec, eta_bc = generate_irregular_wave(
 
 The `generate_irregular_wave` function builds a band-limited random wave series based on PM and JONSWAP spectra.
 
-#### 3.1.1 Pierson–Moskowitz (PM)
+**3.1.1. Pierson–Moskowitz (PM)** 
 
-This spectrum for a fully-developed sea [@Henrique2003] is defined by:
+This spectrum for a fully-developed sea [@Henrique et al., 2003] is defined as:
 
-\begin{equation}\label{eq:pm}
-S_{PM}(f) \;=\; \frac{5}{16}\,H_s^2\,f_p^4\,f^{-5}\,
-  \exp\!\Bigl[-\tfrac{5}{4}\bigl(f_p/f\bigr)^4\Bigr],
-\quad f_p = \frac{1}{T_p}.
-\end{equation}
-
-where:
-- \(S_{PM}(f)\) is the spectral energy density [m²/Hz]  
-- \(H_s\) is the significant wave height [m]  
-- \(f_p\) is the peak frequency [Hz]  
-- \(T_p\) is the peak wave period [s]  
-- \(f\) is the frequency [Hz]  
-
-#### 3.1.2 JONSWAP
-
-The JONSWAP spectrum [@Hasselmann1973] modifies PM with a peak enhancement factor:
-
-\begin{equation}\label{eq:jonswap}
-S_{J}(f) \;=\; S_{PM}(f)\;\gamma^{\exp\!\Bigl[-\tfrac{1}{2\sigma^2}\bigl(\tfrac{f}{f_p}-1\bigr)^2\Bigr]},
-\quad
-\sigma = 
-\begin{cases}
-0.07, & f < f_p,\\
-0.09, & f > f_p.
-\end{cases}
-\end{equation}
+$$
+S_{PM}(f) = \frac{5}{16} H_s^2 f_p^4 f^{-5}\
+  \exp\left[-\frac{5}{4}\left(\frac{f_p}{f}\right)^4\right]
+$$
 
 where:
-- \(S_{J}(f)\) is the JONSWAP spectral energy density [m²/Hz]  
-- \(\gamma\) is the peak enhancement factor (typically 3.3)  
-- \(\sigma\) is the spectral width parameter  
+- $S_{PM}(f)$ is the spectral energy density [m²/Hz]  
+- $H_s$ is the significant wave height [m]  
+- $f_p$ is the peak frequency [Hz], with $f_p = 1/T_p$  
+- $T_p$ is the peak wave period [s]  
+- $f$ is the frequency [Hz]  
 
-Once \(S(f)\) is defined, the surface elevation time series is constructed as:
+**3.1.2 JONSWAP** 
 
-\begin{equation}\label{eq:eta_series}
-\eta(t) \;=\; \sum_{i} A_i \cos\!\bigl(2\pi f_i\,t + \phi_i\bigr),
-\end{equation}
+This spectrum modifies the PM with a peaked enhancement factor [@Hasselmann et al., 1973] as:
 
-with amplitudes
-
-\begin{equation}\label{eq:amplitudes}
-A_i = \sqrt{2\,S(f_i)\,\Delta f},
-\end{equation}
+$$
+S_{J}(f) = S_{PM}(f)\;\gamma^{\displaystyle
+  \exp\left[-\frac{1}{2\sigma^2}\left(\frac{f}{f_p}-1\right)^2\right]}
+$$
 
 where:
-- \(\eta(t)\) is the free-surface elevation [m]  
-- \(A_i\) is the amplitude for component \(i\) [m]  
-- \(\phi_i\) is a random phase in \([0,2\pi]\)  
-- \(\Delta f\) is the frequency spacing  
+- $S_{J}(f)$ is the JONSWAP spectral energy density [m²/Hz]  
+- $\gamma$ is the peak enhancement factor (typically 3.3)  
+- $\sigma$ is the spectral width parameter, with $\sigma = 0.07$ for $f < f_p$ and $\sigma = 0.09$ for $f > f_p$  
 
+Once $S(f)$ is defined, the surface elevation time series is:
+
+$$
+\eta(t) = \sum_{i} A_i \cos\bigl(2\pi f_i + \phi_i\bigr),
+$$
+
+where:
+- $\eta(t)$ is the free-surface elevation at time $t$ [m]  
+- $A_i$ is the wave amplitude for frequency $f_i$ [m]  
+- $\phi_i$ is a random phase shift in $[0,2\pi]$  
+- $\Delta f$ is the frequency resolution  
+
+The amplitudes $A_i$ are given by:
+
+$$
+A_i = \sqrt{2\,S(f_i)\,\Delta f}.
+$$
+
+To test it, run this example:
+
+bash
+python examples/wave2D_irregular.py
+
+Where the inputs for domain and wave generation are taken from a YAML file:
+
+yaml
+grid:
+  nx: 200
+  ny: 200
+  dx: 1.0
+  dy: 1.0
+
+physics:
+  gravity: 9.81
+  depth: 5.0
+
+forcing:
+  type: jonswap   # options: pm or jonswap
+  gamma: 3.3
+  Hs: 0.5         # significant wave height (m)
+  Tp: 3.0         # peak period (s)
+
+solver:
+  dt: 0.1
+  duration: 60.0
+
+output:
+  gauge: [100, 100]  # grid indices (i, j)
+
+
+![Figure 1: Irregular wave field output of the example. The left subplot shows the upper view of the wave field (incoming from the south boundary). The side boundaries are set as free-slip conditions, while the northern boundary has a wave absorption condition. The subplot on the right shows the surface elevation over time at observation points.\label{fig:irregular}](media/wave2D_irregular_final.png)
+
+
+### 3.2 2D Water Drop (Circular Wave Propagation)
+
+This example demonstrates the classic 2D linear wave equation:
+
+The governing equation is the 2D linear wave equation:
+
+$$
+\frac{\partial^2 \eta}{\partial t^2} = c^2 \nabla^2 \eta
+$$
+
+with zero‐Dirichlet boundary conditions on all edges and an initial Gaussian hump at the center. The time‐stepping update is a second‐order explicit scheme:
+
+$$
+\eta^{n+1} = 2\eta^n - \eta^{n-1} + (c\Delta t)^2\nabla^2 \eta^n
+$$
 To test, run:
 
 ```bash
