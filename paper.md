@@ -71,7 +71,7 @@ S_{PM}(f) = \frac{5}{16}\,H_s^2\,f_p^4\,f^{-5}
 $$
 
 where:
-- \(S_{PM}(f)\) is the spectral energy density [m\(^2\)/Hz]  
+- $\(S_{PM}(f)\)$ is the spectral energy density [m\(^2\)/Hz]  
 - \(H_s\) is the significant wave height [m]  
 - \(f_p\) is the peak frequency [Hz], with \(f_p = 1 / T_p\)  
 - \(T_p\) is the peak wave period [s]  
