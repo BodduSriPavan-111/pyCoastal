@@ -1,5 +1,5 @@
 ---
-title: 'pyCoastal: a Python package for Coastal Engineering'
+title: ' **pyCoastal: a Python package for Numerical Modeling in Coastal Engineering**'
 tags:
   - Python
   - numerical modeling
@@ -7,12 +7,12 @@ tags:
   - Computational Fluid Dynamics
 authors:
   - name: Stefano Biondi
-    orcid: 0009-0001-5737-6012
-    affiliation: "1" 
+  - orcid: 0009-0001-5737-6012
+  - affiliation: "1" 
 
 affiliations:
  - name: University of Florida, Gainesville, FL, United States
-   index: 1
+ -  index: 1
 
 date: 17 July 2025
 bibliography: paper.bib
@@ -29,14 +29,7 @@ pyCoastal addresses this issue by offering a lightweight and modular coastal mod
 
 # 2. Functionality
 
-pyCoastal consists of several modular subcomponents designed that allow to choose for:
-- Grid module: Creates 1D or 2D structured grids using `UniformGrid`
-- Operator module: Finite-difference operators (gradient, divergence, Laplacian) for scalar and vector fields
-- Physics modules: Implements shallow water equations, wave advection, pollutant transport, and viscous flow
-- Boundary module: Defines reusable boundary conditions (Dirichlet, Neumann, Sponge, Wall)
-- Visualization: Built-in support for animation using matplotlib
-- Configuration system: YAML-based input files for fully parameterized, reproducible simulations
-These components can be reused independently or combined to prototype new physical models or teach numerical methods.
+pyCoastal is organized into modular subcomponents that can be reused independently or combined to build customized simulations, including a grid module (with UniformGrid) for creating 1D and 2D structured meshes, an operator module offering finite‐difference stencils for gradient, divergence, and Laplacian calculations, physics modules that implement shallow-water equations, wave advection, pollutant transport, and viscous flow, a boundary module supporting Dirichlet, Neumann, sponge layer, and wall conditions, built-in visualization via Matplotlib animations, and a YAML-based configuration system for fully parameterized, reproducible runs.
 
 # 3. Examples
 
