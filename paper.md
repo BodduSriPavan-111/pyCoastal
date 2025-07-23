@@ -141,7 +141,7 @@ output:
   gauge: [100, 100]  # grid indices (i, j)
 ```
 
-![Figure 1: Irregular wave field output of the example. The left subplot shows the upper view of the wave field (incoming from the south boundary). The side boundaries are set as free-slip conditions, while the northern boundary has a wave absorption condition. The subplot on the right shows the surface elevation over time at observation points.\label{fig:irregular}](media/wave2D_irregular_final.png){ width=600px }
+![Figure 1: Irregular wave field output of the example. The left subplot shows the upper view of the wave field (incoming from the south boundary). The side boundaries are set as free-slip conditions, while the northern boundary has a wave absorption condition. The subplot on the right shows the surface elevation over time at observation points.\label{fig:irregular}](media/wave2D_irregular_final.png)
 
 
 ### 3.2 2D Water Drop (Circular Wave Propagation)
@@ -156,7 +156,7 @@ The simulation includes; Zero-Dirichlet boundary conditions on all domain edges,
 
 The output provides real-time animation, allowing users to visually observe expanding circular wavefronts and their reflections. Additionally, it is fully configurable via YAML, enabling easy adjustment of domain size, resolution, wave speed, CFL number, and simulation duration without modifying the code.
 
-![Figure 2: Solution of the classic 2D linear wave equation. The colormap represents the water surface elevation.\label{fig:waterdrop}](media/water_drop_central_plot.png){ width=600px }
+![Figure 2: Solution of the classic 2D linear wave equation. The colormap represents the water surface elevation.\label{fig:waterdrop}](media/water_drop_central_plot.png)
 
 #### Run the Example
 
