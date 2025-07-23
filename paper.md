@@ -102,6 +102,7 @@ A<sub>i</sub> is calculated as:
 
 <div style="text-align: center;"> A<sub>i</sub> = √[2 &middot; S(f<sub>i</sub>) &middot; Δf] </div>
 
+
 To test it, run this example:
 
 ```bash
