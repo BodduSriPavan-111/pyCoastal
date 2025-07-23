@@ -164,10 +164,12 @@ with zero‐Dirichlet boundary conditions on all edges and an initial Gaussian h
 $$
 \eta^{n+1} = 2\eta^n - \eta^{n-1} + (c\Delta t)^2\nabla^2 \eta^n
 $$
+
 To test, run:
 
 ```bash
 python examples/waves2D_irregular.py
+```
 
 The output provides real-time animation, allowing users to visually observe expanding circular wavefronts and their reflections. Additionally, it is fully configurable via YAML, enabling easy adjustment of domain size, resolution, wave speed, CFL number, and simulation duration without modifying the code.
 
