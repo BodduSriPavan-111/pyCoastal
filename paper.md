@@ -31,7 +31,7 @@ pyCoastal addresses this issue by offering a lightweight and modular coastal mod
 
 # 2. Functionality
 
-pyCoastal is organized into modular subcomponents that can be reused independently or combined to build customized simulations, including a grid module (with UniformGrid) for creating 1D and 2D structured meshes, an operator module offering finite‐difference stencils for gradient, divergence, and Laplacian calculations, physics modules that implement shallow-water equations, wave advection, pollutant transport, and viscous flow, a boundary module supporting Dirichlet, Neumann, sponge layer, and wall conditions, built-in visualization via Matplotlib animations, and a YAML-based configuration system for fully parameterized, reproducible runs.
+pyCoastal comprises a collection of interchangeable modules that may be employed independently or combined to construct comprehensive simulation workflows. The Grid module supplies the UniformGrid class for defining one dimensional and two dimensional structured meshes. The Operator module provides finite difference stencils for computing spatial derivatives such as gradient, divergence and Laplacian. The Physics modules implement models for shallow water dynamics, wave advection, pollutant transport and viscous flow. The Boundary module supports Dirichlet, Neumann, sponge layer and wall conditions to represent inflow, outflow and reflective behaviours. Simulation results may be visualised in real time through integration with Matplotlib animation capabilities. All aspects of a simulation—including grid geometry, physical parameters, solver settings and boundary definitions—are specified via a human readable YAML configuration file to ensure full parameterisation and reproducibility.
 
 # 3. Examples
 
@@ -169,6 +169,8 @@ The output provides real-time animation, allowing users to visually observe expa
 ```bash
 python examples/water_drop.py
 ```
+# Conclusion Future directions
+The examples shown here illustrate only a subset of pyCoastal’s capabilities. The existing tools already cover a broad range of coastal‐hydrodynamics problems and are designed for future expansion into new application areas. In the next development phase, pyCoastal will extend support to spatially varying bathymetry, wave energy dissipation and breaking models, and fully coupled nearshore hydrodynamics. To date, the framework provides an extensive library of coastal‐engineering formulations for calculating transport‐related coefficients and wave parameters—such as sediment transport rates, dispersion relations, and wave setup coefficients—which will form the foundation for these forthcoming enhancements.
 
 # Acknowledgements
 I thank professors Alberto Canestrelli (UF) and Donald Slinn (UF) for the teachings in the numerical modeling and Hydrodynamics field.
