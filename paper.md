@@ -21,22 +21,21 @@ bibliography: paper.bib
 
 pyCoastal is an open-source Python framework for the numerical simulation of coastal hydrodynamics and scalar transport processes. It provides a modular and extensible platform for solving linear and nonlinear partial differential equations relevant to coastal systems, including wave propagation, pollutant dispersion, and viscous fluid dynamics. The framework supports structured 1D and 2D Cartesian grids, configurable through lightweight YAML files, and includes reusable components for grid generation, boundary condition management, numerical operators, and time integration schemes. Physical modules are implemented as standalone classes and can be easily composed or extended for prototyping and research. pyCoastal emphasizes clarity and reproducibility, with a strong focus on animated visualization, clean code structure, and pedagogical transparency. It is particularly suited for research prototyping, model intercomparison studies, and educational applications in coastal engineering, fluid mechanics, and numerical modeling.
 
-# Statement of need
+# 1. Statement of need
 
 Numerical modeling of coastal processes, such as wave propagation, shallow water flow, and pollutant transport, typically relies on specialized software frameworks that are often complex to configure, extend, or adapt to new applications. Tools like SWAN, ADCIRC, and OpenFOAM, although powerful, present significant barriers due to their steep learning curves and rigid internal structures. Studies have shown that more computationally demanding models do not necessarily yield higher accuracy, especially when simpler models are tuned effectively [@Lashley et al., 2020]. Furthermore, successful calibration of numerical models hinges on the ability to accurately represent key physical processes and structural features [@Simmons et al., 2017]. This complexity poses challenges both for researchers aiming to prototype models rapidly and for instructors seeking clear, demonstrable tools for teaching.
 
 pyCoastal addresses this issue by offering a lightweight and modular coastal modeling framework fully in Python. It is designed to prioritize clarity and reproducibility, allowing users to define simulations through human-readable YAML configuration files and execute them with minimal setup. The codebase provides reusable components for grid generation, numerical operators, time integration schemes, and boundary condition handling, supporting both classical and custom physical models with ease. Its structure is designed to support both research applications and instructional use in topics such as coastal hydrodynamics, numerical modeling, and environmental fluid mechanics. Moreover, the framework integrates numerous established coastal‑engineering formulations—such as wave run‑up, sediment transport, and boundary layer calculations, enabling users to compute essential coastal parameters with ease. As a result, this module functions as a versatile library suitable for both academic research and industrial applications. In conclusion, pyCoastal offers a balance of flexibility and structure suitable for a range of academic and applied contexts.
 
-# Examples
+# 2. Examples
 
-here are explained some cases implemented in pyCoastal to play around:
+Some features of the pyCoastal package are explained in the following section:
 
-### wave generation
+### 2.1. Irregular wave generation
 
 The `generate_irregular_wave` function builds a band-limited random wave time series based on standard oceanographic spectra:
 
 ```python
-
 # -------------------------------------------------------------------
 # 3) Generate wave boundary forcing 
 # -------------------------------------------------------------------
@@ -51,7 +50,7 @@ t_vec, eta_bc = generate_irregular_wave(
 )
 ```
 
-1. **Pierson–Moskowitz (PM)** spectrum for a fully-developed sea [@Henrique et al., 2003]:
+2.1.1. **Pierson–Moskowitz (PM)** spectrum for a fully-developed sea [@Henrique et al., 2003]:
 
 <div style="text-align: center;">
   S<sub>PM</sub>(f) = (5/16) &middot; H<sub>s</sub><sup>2</sup> &middot; f<sub>p</sub><sup>4</sup> &middot; f<sup>-5</sup> &middot; exp[ - (5/4) &middot; (f<sub>p</sub> / f)<sup>4</sup> ]
@@ -59,19 +58,47 @@ t_vec, eta_bc = generate_irregular_wave(
 
 where f<sub>p</sub> = 1 / T<sub>p</sub>.
 
-2. **JONSWAP** spectrum, modifying PM with a peaked enhancement [@Hasselmann et al., 1973]:
+2.1.2 **JONSWAP** spectrum, modifying PM with a peaked enhancement [@Hasselmann et al., 1973]:
 
 S<sub>J</sub>(f) = S<sub>PM</sub>(f) &middot; γ<sup>exp[ - (1 / 2σ<sup>2</sup>) &middot; ( (f / f<sub>p</sub>) - 1 )<sup>2</sup> ]</sup>
 
-where σ depends on f relative to f<sub>p</sub>).
+where σ depends on f relative to f<sub>p</sub>.
 
 Once the spectral density S<sub>PM</sub>(f) is defined, the surface elevation time series is composed as:
 
 η(t) = Σ A<sub>i</sub> &middot; cos(2πf<sub>i</sub>t + φ<sub>i</sub>)  
 where A<sub>i</sub> = √[2 &middot; S(f<sub>i</sub>) &middot; Δf]
 
+run this example:
+
 ```bash
 python examples/wave2D_irregular.py
+```
+Where the inputs are taken from a YAML file:
+
+```yaml
+grid:
+  nx: 200
+  ny: 200
+  dx: 1.0
+  dy: 1.0
+
+physics:
+  gravity: 9.81
+  depth: 5.0
+
+forcing:
+  type: jonswap   # options: pm or jonswap
+  gamma: 3.3
+  Hs: 0.5         # significant wave height (m)
+  Tp: 3.0         # peak period (s)
+
+solver:
+  dt: 0.1
+  duration: 60.0
+
+output:
+  gauge: [100, 100]  # grid indices (i, j)
 ```
 
 <figure>
@@ -82,7 +109,7 @@ python examples/wave2D_irregular.py
 </figure>
 
 
-### 2D Water Drop (Circular Wave Propagation)
+### 2.2 2D Water Drop (Circular Wave Propagation)
 
 This example demonstrates the classic 2D linear wave equation:
 
