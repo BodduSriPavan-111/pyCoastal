@@ -50,7 +50,9 @@ t_vec, eta_bc = generate_irregular_wave(
 )
 ```
 
-2.1.1. **Pierson–Moskowitz (PM)** spectrum for a fully-developed sea [@Henrique et al., 2003]:
+2.1.1. **Pierson–Moskowitz (PM)** 
+
+This spectrum for a fully-developed sea [@Henrique et al., 2003] is defined as:
 
 <div style="text-align: center;">
   S<sub>PM</sub>(f) = (5/16) &middot; H<sub>s</sub><sup>2</sup> &middot; f<sub>p</sub><sup>4</sup> &middot; f<sup>-5</sup> &middot; exp[ - (5/4) &middot; (f<sub>p</sub> / f)<sup>4</sup> ],
@@ -68,7 +70,9 @@ where:
 
 -f is the frequency [Hz]
 
-2.1.2 **JONSWAP** spectrum, modifying PM with a peaked enhancement [@Hasselmann et al., 1973]:
+2.1.2 **JONSWAP** 
+
+This spectrum modifies the PM with a peaked enhancement factor [@Hasselmann et al., 1973] as:
 
 S<sub>J</sub>(f) = S<sub>PM</sub>(f) &middot; γ<sup>exp[ - (1 / 2σ<sup>2</sup>) &middot; ( (f / f<sub>p</sub>) - 1 )<sup>2</sup> ]</sup>
 
