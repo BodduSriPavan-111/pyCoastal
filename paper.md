@@ -79,7 +79,7 @@ The output provides real-time animation, allowing users to visually observe expa
 
 ```bash
 python examples/water_drop.py
-
+```
 
 # Figures
 
