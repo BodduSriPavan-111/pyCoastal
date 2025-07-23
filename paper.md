@@ -27,11 +27,22 @@ Numerical modeling of coastal processes, such as wave propagation, shallow water
 
 pyCoastal addresses this issue by offering a lightweight and modular coastal modeling framework fully in Python. It is designed to prioritize clarity and reproducibility, allowing users to define simulations through human-readable YAML configuration files and execute them with minimal setup. The codebase provides reusable components for grid generation, numerical operators, time integration schemes, and boundary condition handling, supporting both classical and custom physical models with ease. Its structure is designed to support both research applications and instructional use in topics such as coastal hydrodynamics, numerical modeling, and environmental fluid mechanics. Moreover, the framework integrates numerous established coastal‑engineering formulations—such as wave run‑up, sediment transport, and boundary layer calculations, enabling users to compute essential coastal parameters with ease. As a result, this module functions as a versatile library suitable for both academic research and industrial applications. In conclusion, pyCoastal offers a balance of flexibility and structure suitable for a range of academic and applied contexts.
 
-# 2. Examples
+# 2. Functionality
+
+pyCoastal consists of several modular subcomponents designed that allow to choose for:
+- **Grid module**: Creates 1D or 2D structured grids using `UniformGrid`
+- **Operator module**: Finite-difference operators (gradient, divergence, Laplacian) for scalar and vector fields
+- **Physics modules**: Implements shallow water equations, wave advection, pollutant transport, and viscous flow
+- **Boundary module**: Defines reusable boundary conditions (Dirichlet, Neumann, Sponge, Wall)
+- **Visualization**: Built-in support for animation using matplotlib
+- **Configuration system**: YAML-based input files for fully parameterized, reproducible simulations
+These components can be reused independently or combined to prototype new physical models or teach numerical methods.
+
+# 3. Examples
 
 The main purpose of this package is to provide a fully python based tool that allows to build, test and play with fluid dynamics numerical modeling. In the following section, some of the pre-built cases are explained :
 
-### 2.1. Irregular wave generation
+### 3.1. Irregular wave generation
 
 The `generate_irregular_wave` function builds a band-limited random wave time series based on standard oceanographic spectra:
 
@@ -50,7 +61,7 @@ t_vec, eta_bc = generate_irregular_wave(
 )
 ```
 
-2.1.1. **Pierson–Moskowitz (PM)** 
+**3.1.1. Pierson–Moskowitz (PM)** 
 
 This spectrum for a fully-developed sea [@Henrique et al., 2003] is defined as:
 
@@ -70,7 +81,7 @@ where:
 
 -f is the frequency [Hz]
 
-2.1.2 **JONSWAP** 
+**3.1.2 JONSWAP** 
 
 This spectrum modifies the PM with a peaked enhancement factor [@Hasselmann et al., 1973] as:
 
@@ -143,7 +154,7 @@ output:
 </figure>
 
 
-### 2.2 2D Water Drop (Circular Wave Propagation)
+### 3.2 2D Water Drop (Circular Wave Propagation)
 
 This example demonstrates the classic 2D linear wave equation:
 
