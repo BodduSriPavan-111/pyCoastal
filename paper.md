@@ -170,7 +170,7 @@ The output provides real-time animation, allowing users to visually observe expa
 python examples/water_drop.py
 ```
 # Conclusion Future directions
-The examples shown here illustrate only a subset of pyCoastal’s capabilities. The existing tools already cover a broad range of coastal‐hydrodynamics problems and are designed for future expansion into new application areas. In the next development phase, pyCoastal will extend support to spatially varying bathymetry, wave energy dissipation and breaking models, and fully coupled nearshore hydrodynamics. To date, the framework provides an extensive library of coastal‐engineering formulations for calculating transport‐related coefficients and wave parameters, such as sediment transport rates, dispersion relations, and wave setup coefficients—which will form the foundation for these forthcoming enhancements.
+The examples shown here illustrate only a subset of pyCoastal’s capabilities. The existing tools already cover a broad range of coastal‐hydrodynamics problems and are designed for future expansion into new application areas. In the next development phase, pyCoastal will extend support to spatially varying bathymetry, wave energy dissipation and breaking models, and fully coupled nearshore hydrodynamics. To date, the framework provides an extensive library of coastal‐engineering formulations for calculating transport‐related coefficients and wave parameters, such as sediment transport rates, dispersion relations, and wave setup coefficients, which will form the foundation for these forthcoming enhancements.
 
 # Acknowledgements
 I thank professors Alberto Canestrelli (UF) and Donald Slinn (UF) for the teachings in the numerical modeling and Hydrodynamics field.
