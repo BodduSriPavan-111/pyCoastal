@@ -8,13 +8,11 @@ tags:
 authors:
   - name: Stefano Biondi
     orcid: 0009-0001-5737-6012
-    affiliation: "1, 2" 
+    affiliation: "1" 
 
 affiliations:
  - name: University of Florida, Gainesville, FL, United States
    index: 1
- - name: National Institute of Standard and Technologies (NIST), Gaithersburg, MD, United States
-   index: 2
 
 date: 17 July 2025
 bibliography: paper.bib
@@ -25,7 +23,7 @@ pyCoastal is an open-source Python framework for the numerical simulation of coa
 
 # Statement of need
 
-Numerical modeling of coastal processes—such as wave propagation, shallow water flow, and pollutant transport—typically relies on specialized software frameworks that are often complex to configure, extend, or adapt to new applications. Tools like SWAN, ADCIRC, and OpenFOAM, although powerful, present significant barriers due to their steep learning curves and rigid internal structures. Studies have shown that more computationally demanding models do not necessarily yield higher accuracy, especially when simpler models are tuned effectively [@Lashley et al., 2020]. Furthermore, successful calibration of numerical models hinges on the ability to accurately represent key physical processes and structural features [@Simmons et al., 2017]. This complexity poses challenges both for researchers aiming to prototype models rapidly and for instructors seeking clear, demonstrable tools for teaching.
+Numerical modeling of coastal processes, such as wave propagation, shallow water flow, and pollutant transport, typically relies on specialized software frameworks that are often complex to configure, extend, or adapt to new applications. Tools like SWAN, ADCIRC, and OpenFOAM, although powerful, present significant barriers due to their steep learning curves and rigid internal structures. Studies have shown that more computationally demanding models do not necessarily yield higher accuracy, especially when simpler models are tuned effectively [@Lashley et al., 2020]. Furthermore, successful calibration of numerical models hinges on the ability to accurately represent key physical processes and structural features [@Simmons et al., 2017]. This complexity poses challenges both for researchers aiming to prototype models rapidly and for instructors seeking clear, demonstrable tools for teaching.
 
 pyCoastal addresses this issue by offering a lightweight and modular coastal modeling framework fully in Python. It is designed to prioritize clarity and reproducibility, allowing users to define simulations through human-readable YAML configuration files and execute them with minimal setup. The codebase provides reusable components for grid generation, numerical operators, time integration schemes, and boundary condition handling, supporting both classical and custom physical models with ease. Its structure is designed to support both research applications and instructional use in topics such as coastal hydrodynamics, numerical modeling, and environmental fluid mechanics. Moreover, the framework integrates numerous established coastal‑engineering formulations—such as wave run‑up, sediment transport, and boundary layer calculations, enabling users to compute essential coastal parameters with ease. As a result, this module functions as a versatile library suitable for both academic research and industrial applications. In conclusion, pyCoastal offers a balance of flexibility and structure suitable for a range of academic and applied contexts.
 
@@ -69,13 +67,13 @@ This example demonstrates the classic 2D linear wave equation:
 \]
 
 Using `water_drop.py`, this simulation showcases:
-Zero-Dirichlet boundary conditions** on all domain edges, ensuring waves vanish at the boundaries, a Gaussian hump as the initial condition, representing a localized disturbance ("water drop") at the domain center, and a second-order finite-difference scheme in both space and time:
+Zero-Dirichlet boundary conditions on all domain edges, ensuring waves vanish at the boundaries, a Gaussian hump as the initial condition, representing a localized disturbance ("water drop") at the domain center, and a second-order finite-difference scheme in both space and time:
   
   \[
   \eta_{\text{new}} = 2\eta - \eta_{\text{old}} + (c\,\Delta t)^2 \nabla^2 \eta
   \]
   
-The output provides real-time animation using `matplotlib.animation.FuncAnimation`, allowing users to visually observe expanding circular wavefronts and their reflections. Additionally, it is fully configurable via YAML, enabling easy adjustment of domain size, resolution, wave speed, CFL number, and simulation duration without modifying the code.
+The output provides real-time animation, allowing users to visually observe expanding circular wavefronts and their reflections. Additionally, it is fully configurable via YAML, enabling easy adjustment of domain size, resolution, wave speed, CFL number, and simulation duration without modifying the code.
 
 #### Run the Example
 
