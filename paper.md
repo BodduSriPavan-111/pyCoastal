@@ -29,7 +29,7 @@ pyCoastal addresses this issue by offering a lightweight and modular coastal mod
 
 # 2. Examples
 
-Some features of the pyCoastal package are explained in the following section:
+The main purpose of this package is to provide a fully python based tool that allows to build, test and play with fluid dynamics numerical modeling. In the following section, some of the pre-built cases are explained :
 
 ### 2.1. Irregular wave generation
 
@@ -66,8 +66,9 @@ where σ depends on f relative to f<sub>p</sub>.
 
 Once the spectral density S<sub>PM</sub>(f) is defined, the surface elevation time series is composed as:
 
-η(t) = Σ A<sub>i</sub> &middot; cos(2πf<sub>i</sub>t + φ<sub>i</sub>)  
-where A<sub>i</sub> = √[2 &middot; S(f<sub>i</sub>) &middot; Δf]
+η(t) = Σ A<sub>i</sub> &middot; cos(2πf<sub>i</sub>t + φ<sub>i</sub>),
+where:
+A<sub>i</sub> = √[2 &middot; S(f<sub>i</sub>) &middot; Δf]
 
 To test it, run this example:
 
