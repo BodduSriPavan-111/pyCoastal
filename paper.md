@@ -170,5 +170,8 @@ The output provides real-time animation, allowing users to visually observe expa
 python examples/water_drop.py
 ```
 
+# Acknowledgements
+I thank professors Alberto Canestrelli (UF) and Donald Slinn (UF) for the teachings in the numerical modeling and Hydrodynamics field.
+
 # References
 see paper.bib
