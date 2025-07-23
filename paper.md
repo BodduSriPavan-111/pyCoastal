@@ -88,7 +88,7 @@ This spectrum for a fully-developed sea [@Henrique et al., 2003] is defined as:
 
 $$
 S_{PM}(f) = \frac{5}{16} H_s^2 f_p^4 f^{-5}\
-  \exp\left[-\frac{5}{4}\left(\frac{f_p}{f}\right)^4\right]
+  \exp\left[-\frac{5}{4}\left(\frac{f_p}{f}\right)^4\right] ,
 $$
 
 where:
@@ -104,7 +104,7 @@ This spectrum modifies the PM with a peaked enhancement factor [@Hasselmann et a
 
 $$
 S_{J}(f) = S_{PM}(f)\;\gamma^{\displaystyle
-  \exp\left[-\frac{1}{2\sigma^2}\left(\frac{f}{f_p}-1\right)^2\right]}
+  \exp\left[-\frac{1}{2\sigma^2}\left(\frac{f}{f_p}-1\right)^2\right]} ,
 $$
 
 where:
@@ -144,16 +144,14 @@ python examples/wave2D_irregular.py
 
 This example demonstrates the classic 2D linear wave equation:
 
-The governing equation is the 2D linear wave equation:
-
 $$
-\frac{\partial^2 \eta}{\partial t^2} = c^2 \nabla^2 \eta
+\frac{\partial^2 \eta}{\partial t^2} = c^2 \nabla^2 \eta ,
 $$
 
-with zero‐Dirichlet boundary conditions on all edges and an initial Gaussian hump at the center. The time‐stepping update is a second‐order explicit scheme:
+and solves in the domain with zero‐Dirichlet boundary conditions on all edges and an initial Gaussian hump at the center. The time‐stepping update is a second‐order explicit scheme:
 
 $$
-\eta^{n+1} = 2\eta^n - \eta^{n-1} + (c\Delta t)^2\nabla^2 \eta^n
+\eta^{n+1} = 2\eta^n - \eta^{n-1} + (c\Delta t)^2\nabla^2 \eta^n .
 $$
 
 To test, run:
