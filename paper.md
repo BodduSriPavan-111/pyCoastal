@@ -87,9 +87,9 @@ S_{J}(f) = S_{PM}(f)\;\gamma^{\displaystyle
 $$
 
 where:
-- $\S_{J}(f)\$ is the JONSWAP spectral energy density $m\(^2\)/Hz$  
-- $\\gamma\$ is the peak enhancement factor (typically 3.3)  
-- $\\sigma\$ is the spectral width parameter, with $\\sigma = 0.07\$ for $\f < f_p\$ and $\\sigma = 0.09\$ for $\f > f_p\$  
+- $S_{J}(f)\$ is the JONSWAP spectral energy density $m\(^2\)/Hz$  
+- $gamma$ is the peak enhancement factor (typically 3.3)  
+- $sigma$ is the spectral width parameter, with $\\sigma = 0.07\$ for $\f < f_p\$ and $\\sigma = 0.09\$ for $\f > f_p\$  
 
 Once \(S(f)\) is defined, the surface elevation time series is:
 
