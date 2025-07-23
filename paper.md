@@ -35,6 +35,22 @@ here are explained some cases implemented in pyCoastal to play around:
 
 The `generate_irregular_wave` function builds a band-limited random wave time series based on standard oceanographic spectra:
 
+```python
+
+# -------------------------------------------------------------------
+# 3) Generate wave boundary forcing 
+# -------------------------------------------------------------------
+from pyCoastal.tools.wave import generate_irregular_wave
+
+t_vec, eta_bc = generate_irregular_wave(
+    Hs=Hs, Tp=Tp,
+    duration=duration,
+    dt=dt,
+    spectrum=spectrum_type,
+    gamma=gamma
+)
+```
+
 1. **Pierson–Moskowitz (PM)** spectrum for a fully-developed sea [@Henrique et al., 2003]:
 
 <div style="text-align: center;">
