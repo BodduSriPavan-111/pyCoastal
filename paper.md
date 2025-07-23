@@ -56,10 +56,6 @@ t_vec, eta_bc = generate_irregular_wave(
 )
 ```
 
-### 3.1 Irregular Wave Generation
-
-The `generate_irregular_wave` function builds a band-limited random wave series based on PM and JONSWAP spectra.
-
 **3.1.1. Pierson–Moskowitz (PM)** 
 
 This spectrum for a fully-developed sea [@Henrique et al., 2003] is defined as:
