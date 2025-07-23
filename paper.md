@@ -80,6 +80,7 @@ where:
 **3.1.2 JONSWAP** 
 
 This spectrum modifies the PM with a peaked enhancement factor [@Hasselmann et al., 1973] as:
+
 $$
 S_{J}(f) = S_{PM}(f)\;\gamma^{\displaystyle
   \exp\!\left[-\frac{1}{2\sigma^2}\!\left(\frac{f}{f_p}-1\right)^2\right]}
