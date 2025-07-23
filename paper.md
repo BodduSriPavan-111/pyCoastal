@@ -80,30 +80,29 @@ where:
 **3.1.2 JONSWAP** 
 
 This spectrum modifies the PM with a peaked enhancement factor [@Hasselmann et al., 1973] as:
-
 $$
 S_{J}(f) = S_{PM}(f)\;\gamma^{\displaystyle
-  \exp\!\Bigl[-\frac{1}{2\sigma^2}\bigl(\frac{f}{f_p}-1\bigr)^2\Bigr]}
+  \exp\!\left[-\frac{1}{2\sigma^2}\!\left(\frac{f}{f_p}-1\right)^2\right]}
 $$
 
 where:
-- $S_{J}(f)\$ is the JONSWAP spectral energy density $m\(^2\)/Hz$  
-- $\gamma\$ is the peak enhancement factor (typically 3.3)  
-- $sigma$ is the spectral width parameter, with $\\sigma = 0.07\$ for $\f < f_p\$ and $\\sigma = 0.09\$ for $\f > f_p\$  
+- $S_{J}(f)$ is the JONSWAP spectral energy density [m²/Hz]  
+- $\gamma$ is the peak enhancement factor (typically 3.3)  
+- $\sigma$ is the spectral width parameter, with $\sigma = 0.07$ for $f < f_p$ and $\sigma = 0.09$ for $f > f_p$  
 
-Once \(S(f)\) is defined, the surface elevation time series is:
+Once $S(f)$ is defined, the surface elevation time series is:
 
 $$
 \eta(t) = \sum_{i} A_i \cos\bigl(2\pi f_i\,t + \phi_i\bigr)
 $$
 
 where:
-- \(\eta(t)\) is the free-surface elevation at time \(t\) [m]  
-- \(A_i\) is the wave amplitude for frequency \(f_i\) [m]  
-- \(\phi_i\) is a random phase shift in \([0,2\pi]\)  
-- \(\Delta f\) is the frequency resolution  
+- $\eta(t)$ is the free-surface elevation at time $t$ [m]  
+- $A_i$ is the wave amplitude for frequency $f_i$ [m]  
+- $\phi_i$ is a random phase shift in $[0,2\pi]$  
+- $\Delta f$ is the frequency resolution  
 
-The amplitudes \(A_i\) are given by:
+The amplitudes $A_i$ are given by:
 
 $$
 A_i = \sqrt{2\,S(f_i)\,\Delta f}.
