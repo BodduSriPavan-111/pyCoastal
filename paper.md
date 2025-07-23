@@ -157,7 +157,7 @@ $$
 with zero‐Dirichlet boundary conditions on all edges and an initial Gaussian hump at the center. The time‐stepping update is a second‐order explicit scheme:
 
 $$
-\eta^{n+1} = 2\,\eta^n - \eta^{n-1} + (c\,\Delta t)^2\,\nabla^2 \eta^n
+\eta^{n+1} = 2\eta^n - \eta^{n-1} + (c\Delta t)^2\nabla^2 \eta^n
 $$
 
 
