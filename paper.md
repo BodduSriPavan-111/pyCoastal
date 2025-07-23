@@ -142,7 +142,7 @@ python examples/wave2D_irregular.py
 
 ### 3.2 2D Water Drop (Circular Wave Propagation)
 
-This example demonstrates the classic 2D linear wave equation for the surface elevation $\eta$ in time:
+This example demonstrates the classic 2D linear wave equation for the surface elevation $\eta$ in time with celerity $/c$:
 
 $$
 \frac{\partial^2 \eta}{\partial t^2} = c^2 \nabla^2 \eta ,
