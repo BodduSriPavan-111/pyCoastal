@@ -45,7 +45,7 @@ where f<sub>p</sub> = 1 / T<sub>p</sub>.
 
 S<sub>J</sub>(f) = S<sub>PM</sub>(f) &middot; γ<sup>exp[ - (1 / 2σ<sup>2</sup>) &middot; ( (f / f<sub>p</sub>) - 1 )<sup>2</sup> ]</sup>
 
-where \(\sigma\) depends on \(f\) relative to \(f_p\).
+where σ depends on f relative to f<sub>p</sub>).
 
 Once the spectral density S<sub>PM</sub>(f) is defined, the surface elevation time series is composed as:
 
@@ -56,17 +56,13 @@ where A<sub>i</sub> = √[2 &middot; S(f<sub>i</sub>) &middot; Δf]
 
 This example demonstrates the classic 2D linear wave equation:
 
-\[
-\eta_{tt} = c^2 \nabla^2 \eta
-\]
+η<sub>tt</sub> = c<sup>2</sup> ∇<sup>2</sup>η
 
 Using `water_drop.py`, this simulation showcases:
 Zero-Dirichlet boundary conditions on all domain edges, ensuring waves vanish at the boundaries, a Gaussian hump as the initial condition, representing a localized disturbance ("water drop") at the domain center, and a second-order finite-difference scheme in both space and time:
   
-  \[
-  \eta_{\text{new}} = 2\eta - \eta_{\text{old}} + (c\,\Delta t)^2 \nabla^2 \eta
-  \]
-  
+η<sub>new</sub> = 2η − η<sub>old</sub> + (c &middot; Δt)<sup>2</sup> ∇<sup>2</sup>η
+
 The output provides real-time animation, allowing users to visually observe expanding circular wavefronts and their reflections. Additionally, it is fully configurable via YAML, enabling easy adjustment of domain size, resolution, wave speed, CFL number, and simulation duration without modifying the code.
 
 #### Run the Example
