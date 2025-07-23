@@ -37,9 +37,7 @@ The `generate_irregular_wave` function builds a band-limited random wave time se
 
 1. **Pierson–Moskowitz (PM)** spectrum for a fully-developed sea [@Henrique et al., 2003]:
 
-\[
-S_{PM}(f) = \frac{5}{16}\,H_s^2\,f_p^4\,f^{-5}\,\exp\left[-\frac{5}{4} \left(\frac{f_p}{f}\right)^4 \right]
-\]
+S<sub>PM</sub>(f) = (5/16) &middot; H<sub>s</sub><sup>2</sup> &middot; f<sub>p</sub><sup>4</sup> &middot; f<sup>-5</sup> &middot; exp[ - (5/4) &middot; (f<sub>p</sub> / f)<sup>4</sup> ]
 
 where \(f_p = 1/T_p\).
 
