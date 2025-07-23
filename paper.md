@@ -55,15 +55,14 @@ where A<sub>i</sub> = √[2 &middot; S(f<sub>i</sub>) &middot; Δf]
 ```bash
 python examples/wave2D_irregular.py
 ```
-![irregular wave field output of the example. The left subplot shows the upper view of the wave field (incoming from the south boundary) the side boundaries are set as free slip conditions, why the northern boundary has a wave absorption condition. The subplot on the right shows the observation points plot in time of the surface elevation](media/wave2D_irregular_final.png)
+
 <figure>
-  
-  <img src="media/wave2D_irregular_final.png" alt="irregular wave field output of the example. The left subplot shows the upper view of the wave field (incoming from the south boundary) the side boundaries are set as free slip conditions, why the northern boundary has a wave absorption condition. The subplot on the right shows the observation points plot in time of the surface elevation" width="600">
+  <img src="media/wave2D_irregular_final.png" alt="irregular wave field output of the example" width="600">
   <figcaption>
     Irregular wave field output of the example. The left subplot shows the upper view of the wave field (incoming from the south boundary). The side boundaries are set as free-slip conditions, while the northern boundary has a wave absorption condition. The subplot on the right shows the surface elevation over time at observation points.
   </figcaption>
 </figure>
-
+irregular wave field output of the example. The left subplot shows the upper view of the wave field (incoming from the south boundary) the side boundaries are set as free slip conditions, why the northern boundary has a wave absorption condition. The subplot on the right shows the observation points plot in time of the surface elevation
 
 ### 2D Water Drop (Circular Wave Propagation)
 
@@ -79,6 +78,7 @@ Zero-Dirichlet boundary conditions on all domain edges, ensuring waves vanish at
 The output provides real-time animation, allowing users to visually observe expanding circular wavefronts and their reflections. Additionally, it is fully configurable via YAML, enabling easy adjustment of domain size, resolution, wave speed, CFL number, and simulation duration without modifying the code.
 
 ![solution of the classic 2D linear wave equation. the colormap represents the surface elevation.](media/water_drop_central_plot.png)
+
 #### Run the Example
 
 ```bash
