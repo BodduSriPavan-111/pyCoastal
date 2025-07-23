@@ -118,6 +118,7 @@ To test it, run this example:
 ```bash
 python examples/wave2D_irregular.py
 ```
+
 Where the inputs for domain and wave generation are taken from a YAML file:
 
 ```yaml
