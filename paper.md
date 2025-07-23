@@ -114,12 +114,11 @@ output:
 
 This example demonstrates the classic 2D linear wave equation:
 
-η<sub>tt</sub> = c<sup>2</sup> ∇<sup>2</sup>η
+η<sub>t</sub> = c<sup>2</sup> ∇<sup>2</sup>η
 
-Using `water_drop.py`, this simulation showcases:
-Zero-Dirichlet boundary conditions on all domain edges, ensuring waves vanish at the boundaries, a Gaussian hump as the initial condition, representing a localized disturbance ("water drop") at the domain center, and a second-order finite-difference scheme in both space and time:
+The simulation includes; Zero-Dirichlet boundary conditions on all domain edges, ensuring waves vanish at the boundaries, a Gaussian hump as the initial condition, representing a localized disturbance ("water drop") at the domain center, and a second-order finite-difference scheme in both space and time:
   
-η<sub>new</sub> = 2η − η<sub>old</sub> + (c &middot; Δt)<sup>2</sup> ∇<sup>2</sup>η
+η<sub>i+1</sub> = 2η − η<sub>i</sub> + (c &middot; Δt)<sup>2</sup> ∇<sup>2</sup>η
 
 The output provides real-time animation, allowing users to visually observe expanding circular wavefronts and their reflections. Additionally, it is fully configurable via YAML, enabling easy adjustment of domain size, resolution, wave speed, CFL number, and simulation duration without modifying the code.
 
