@@ -55,6 +55,32 @@ t_vec, eta_bc = generate_irregular_wave(
     gamma=gamma
 )
 ```
+Where the inputs for domain and wave generation are taken from a YAML file:
+
+```yaml
+grid:
+  nx: 200
+  ny: 200
+  dx: 1.0
+  dy: 1.0
+
+physics:
+  gravity: 9.81
+  depth: 5.0
+
+forcing:
+  type: jonswap   # options: pm or jonswap
+  gamma: 3.3
+  Hs: 0.5         # significant wave height (m)
+  Tp: 3.0         # peak period (s)
+
+solver:
+  dt: 0.1
+  duration: 60.0
+
+output:
+  gauge: [100, 100]  # grid indices (i, j)
+```
 
 **3.1.1. Pierson–Moskowitz (PM)** 
 
@@ -110,32 +136,6 @@ To test it, run this example:
 python examples/wave2D_irregular.py
 ```
 
-Where the inputs for domain and wave generation are taken from a YAML file:
-
-```yaml
-grid:
-  nx: 200
-  ny: 200
-  dx: 1.0
-  dy: 1.0
-
-physics:
-  gravity: 9.81
-  depth: 5.0
-
-forcing:
-  type: jonswap   # options: pm or jonswap
-  gamma: 3.3
-  Hs: 0.5         # significant wave height (m)
-  Tp: 3.0         # peak period (s)
-
-solver:
-  dt: 0.1
-  duration: 60.0
-
-output:
-  gauge: [100, 100]  # grid indices (i, j)
-```
 
 ![Figure 1: Irregular wave field output of the example. The left subplot shows the upper view of the wave field (incoming from the south boundary). The side boundaries are set as free-slip conditions, while the northern boundary has a wave absorption condition. The subplot on the right shows the surface elevation over time at observation points.\label{fig:irregular}](media/wave2D_irregular_final.png)
 
