@@ -115,12 +115,12 @@ $$
 
 To test it, run this example:
 
-bash
+```bash
 python examples/wave2D_irregular.py
-
+```
 Where the inputs for domain and wave generation are taken from a YAML file:
 
-yaml
+```yaml
 grid:
   nx: 200
   ny: 200
@@ -143,7 +143,7 @@ solver:
 
 output:
   gauge: [100, 100]  # grid indices (i, j)
-
+```
 
 ![Figure 1: Irregular wave field output of the example. The left subplot shows the upper view of the wave field (incoming from the south boundary). The side boundaries are set as free-slip conditions, while the northern boundary has a wave absorption condition. The subplot on the right shows the surface elevation over time at observation points.\label{fig:irregular}](media/wave2D_irregular_final.png)
 
