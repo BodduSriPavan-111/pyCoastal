@@ -37,24 +37,20 @@ The `generate_irregular_wave` function builds a band-limited random wave time se
 
 1. **Pierson–Moskowitz (PM)** spectrum for a fully-developed sea [@Henrique et al., 2003]:
 
-S<sub>PM</sub>(f) = (5/16) &middot; H<sub>s</sub><sup>2</sup> &middot; f<sub>p</sub><sup>4</sup> &middot; f<sup>-5</sup> &middot; exp[ - (5/4) &middot; (f<sub>p</sub> / f)<sup>4</sup> ]
+S<sub>PM</sub>(f) = (5/16) &middot; H<sub>s</sub><sup>2</sup> &middot; f<sub>p</sub><sup>4</sup> &middot; f<sup>-5</sup> &middot; exp[ - (5/4) &middot; (f<sub>p</sub> / f)<sup>4</sup> ] 
 
-where \(f_p = 1/T_p\).
+where f<sub>p</sub> = 1 / T<sub>p</sub>.
 
 2. **JONSWAP** spectrum, modifying PM with a peaked enhancement [@Hasselmann et al., 1973]:
 
-\[
-S_{J}(f) = S_{PM}(f)\;\gamma^{\displaystyle \exp\!\left[-\frac{1}{2\sigma^2}\left(\frac{f}{f_p} - 1\right)^2\right]}
-\]
+S<sub>J</sub>(f) = S<sub>PM</sub>(f) &middot; γ<sup>exp[ - (1 / 2σ<sup>2</sup>) &middot; ( (f / f<sub>p</sub>) - 1 )<sup>2</sup> ]</sup>
 
 where \(\sigma\) depends on \(f\) relative to \(f_p\).
 
-Once the spectral density \(S(f)\) is defined, the surface elevation time series is composed as:
+Once the spectral density S<sub>PM</sub>(f) is defined, the surface elevation time series is composed as:
 
-\[
-\eta(t) = \sum_{i} A_i \cos\left(2\pi f_i t + \phi_i\right), \quad \text{where} \quad A_i = \sqrt{2 S(f_i)\,\Delta f}
-\]
-
+η(t) = Σ A<sub>i</sub> &middot; cos(2πf<sub>i</sub>t + φ<sub>i</sub>)  
+where A<sub>i</sub> = √[2 &middot; S(f<sub>i</sub>) &middot; Δf]
 
 ### 2D Water Drop (Circular Wave Propagation)
 
