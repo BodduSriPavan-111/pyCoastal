@@ -59,7 +59,7 @@ python examples/wave2D_irregular.py
 <figure>
   <img src="media/wave2D_irregular_final.png" alt="Irregular wave field output of the example" width="600">
   <figcaption style="font-size: 0.9em; font-style: italic;">
-    Irregular wave field output of the example. The left subplot shows the upper view of the wave field (incoming from the south boundary). The side boundaries are set as free-slip conditions, while the northern boundary has a wave absorption condition. The subplot on the right shows the surface elevation over time at observation points.
+    Figure 1: Irregular wave field output of the example. The left subplot shows the upper view of the wave field (incoming from the south boundary). The side boundaries are set as free-slip conditions, while the northern boundary has a wave absorption condition. The subplot on the right shows the surface elevation over time at observation points.
   </figcaption>
 </figure>
 
@@ -80,7 +80,7 @@ The output provides real-time animation, allowing users to visually observe expa
 <figure>
   <img src="media/water_drop_central_plot.png" alt="Solution of the 2D linear wave equation" width="600">
   <figcaption style="font-size: 0.9em; font-style: italic;">
-    Solution of the classic 2D linear wave equation. The colormap represents the water surface elevation.
+    Figure 2: Solution of the classic 2D linear wave equation. The colormap represents the water surface elevation.
   </figcaption>
 </figure>
 
