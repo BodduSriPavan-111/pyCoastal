@@ -54,7 +54,7 @@ t_vec, eta_bc = generate_irregular_wave(
 
 <div style="text-align: center;">
   S<sub>PM</sub>(f) = (5/16) &middot; H<sub>s</sub><sup>2</sup> &middot; f<sub>p</sub><sup>4</sup> &middot; f<sup>-5</sup> &middot; exp[ - (5/4) &middot; (f<sub>p</sub> / f)<sup>4</sup> ]
-</div>
+</div>,
 
 where:
 
