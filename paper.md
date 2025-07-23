@@ -53,20 +53,20 @@ t_vec, eta_bc = generate_irregular_wave(
 2.1.1. **Pierson–Moskowitz (PM)** spectrum for a fully-developed sea [@Henrique et al., 2003]:
 
 <div style="text-align: center;">
-  S<sub>PM</sub>(f) = (5/16) &middot; H<sub>s</sub><sup>2</sup> &middot; f<sub>p</sub><sup>4</sup> &middot; f<sup>-5</sup> &middot; exp[ - (5/4) &middot; (f<sub>p</sub> / f)<sup>4</sup> ]
-</div>,
+  S<sub>PM</sub>(f) = (5/16) &middot; H<sub>s</sub><sup>2</sup> &middot; f<sub>p</sub><sup>4</sup> &middot; f<sup>-5</sup> &middot; exp[ - (5/4) &middot; (f<sub>p</sub> / f)<sup>4</sup> ],
+</div>
 
 where:
 
-S<sub>PM</sub>(f) is the spectral energy density [m²/Hz]
+-S<sub>PM</sub>(f) is the spectral energy density [m²/Hz]
 
-H<sub>s</sub> is the significant wave height [m]
+-H<sub>s</sub> is the significant wave height [m]
 
-f<sub>p</sub> is the peak frequency [Hz], with f<sub>p</sub> = 1 / T<sub>p</sub>
+-f<sub>p</sub> is the peak frequency [Hz], with f<sub>p</sub> = 1 / T<sub>p</sub>
 
-T<sub>p</sub> is the peak wave period [s]
+-T<sub>p</sub> is the peak wave period [s]
 
-f is the frequency [Hz]
+-f is the frequency [Hz]
 
 2.1.2 **JONSWAP** spectrum, modifying PM with a peaked enhancement [@Hasselmann et al., 1973]:
 
@@ -74,25 +74,25 @@ S<sub>J</sub>(f) = S<sub>PM</sub>(f) &middot; γ<sup>exp[ - (1 / 2σ<sup>2</sup>
 
 where:
 
-S<sub>J</sub>(f) is the JONSWAP spectral energy density [m²/Hz]
+-S<sub>J</sub>(f) is the JONSWAP spectral energy density [m²/Hz]
 
-γ is the peak enhancement factor (typically 3.3)
+-γ is the peak enhancement factor (typically 3.3)
 
-σ is the spectral width parameter (σ = 0.07 for f < f<sub>p</sub>, σ = 0.09 for f > f<sub>p</sub>)
+-σ is the spectral width parameter (σ = 0.07 for f < f<sub>p</sub>, σ = 0.09 for f > f<sub>p</sub>)
 
 Once the spectral density S<sub>PM</sub>(f) is defined, the surface elevation time series is composed as:
 
 η(t) = Σ A<sub>i</sub> &middot; cos(2πf<sub>i</sub>t + φ<sub>i</sub>),
+
 where:
-where:
 
-η(t) is the free surface elevation at time t [m]
+-η(t) is the free surface elevation at time t [m]
 
-A<sub>i</sub> is the wave amplitude for frequency f<sub>i</sub> [m]
+-A<sub>i</sub> is the wave amplitude for frequency f<sub>i</sub> [m]
 
-φ<sub>i</sub> is a random phase shift in [0, 2π]
+-φ<sub>i</sub> is a random phase shift in [0, 2π]
 
-Δf is the frequency resolution
+-Δf is the frequency resolution
 
 A<sub>i</sub> is calculated as:
 
