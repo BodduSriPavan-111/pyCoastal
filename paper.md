@@ -66,7 +66,7 @@ t_vec, eta_bc = generate_irregular_wave(
 This spectrum for a fully-developed sea [@Henrique et al., 2003] is defined as:
 
 $$
-S_{PM}(f) = \frac{5}{16}\H_s^2\f_p^4\f^{-5}
+S_{PM}(f) = \frac{5}{16} H_s^2 f_p^4 f^{-5}\
   \exp\!\left[-\frac{5}{4}\!\left(\frac{f_p}{f}\right)^4\right]
 $$
 
