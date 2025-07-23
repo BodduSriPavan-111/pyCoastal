@@ -69,12 +69,12 @@ Once the spectral density S<sub>PM</sub>(f) is defined, the surface elevation ti
 η(t) = Σ A<sub>i</sub> &middot; cos(2πf<sub>i</sub>t + φ<sub>i</sub>)  
 where A<sub>i</sub> = √[2 &middot; S(f<sub>i</sub>) &middot; Δf]
 
-run this example:
+To test it, run this example:
 
 ```bash
 python examples/wave2D_irregular.py
 ```
-Where the inputs are taken from a YAML file:
+Where the inputs for domain and wave generation are taken from a YAML file:
 
 ```yaml
 grid:
