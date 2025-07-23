@@ -1,22 +1,23 @@
 ---
-title: ' **pyCoastal: a Python package for Numerical Modeling in Coastal Engineering**'
+Title: ' **pyCoastal: a Python package for Numerical Modeling in Coastal Engineering**'
 
 tags:
   - Python
   - numerical modeling
   - Coastal Engineering
   - Computational Fluid Dynamics
-authors:
+Authors:
   - name: Stefano Biondi
   - orcid: 0009-0001-5737-6012
   - affiliation: "1" 
 
-affiliations:
+Affiliations:
  - name: University of Florida, Gainesville, FL, United States
  -  index: 1
 
-date: 17 July 2025
-bibliography: paper.bib
+Date: 17 July 2025
+
+Bibliography: paper.bib
 
 # Summary
 
