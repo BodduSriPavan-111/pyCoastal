@@ -94,7 +94,7 @@ where:
 Once $S(f)$ is defined, the surface elevation time series is:
 
 $$
-\eta(t) = \sum_{i} A_i \cos\bigl(2\pi f_i\t + \phi_i\bigr),
+\eta(t) = \sum_{i} A_i \cos\bigl(2\pi f_i + \phi_i\bigr),
 $$
 
 where:
