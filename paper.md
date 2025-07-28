@@ -1,43 +1,38 @@
 ---
-Title: ' **pyCoastal: a Python package for Numerical Modeling in Coastal Engineering**'
-
+title: 'pyCoastal: a Python package for Numerical Modeling in Coastal Engineering'
 tags:
   - Python
   - numerical modeling
   - Coastal Engineering
   - Computational Fluid Dynamics
-Authors:
+authors:
   - name: Stefano Biondi
   - orcid: 0009-0001-5737-6012
   - affiliation: "1" 
-
-Affiliations:
+affiliations:
  - name: University of Florida, Gainesville, FL, United States
  -  index: 1
+date: 17 July 2025
 
-Date: 17 July 2025
-
-Bibliography: paper.bib
+bibliography: paper.bib
 
 # Summary
 
 pyCoastal is an open-source Python framework for the numerical simulation of coastal hydrodynamics and scalar transport processes. It provides a modular and extensible platform for solving linear and nonlinear partial differential equations relevant to coastal systems, including wave propagation, pollutant dispersion, and viscous fluid dynamics. The framework supports structured 1D and 2D Cartesian grids, configurable through lightweight YAML files, and includes reusable components for grid generation, boundary condition management, numerical operators, and time integration schemes. Physical modules are implemented as standalone classes and can be easily composed or extended for prototyping and research. pyCoastal emphasizes clarity and reproducibility, with a strong focus on animated visualization, clean code structure, and pedagogical transparency. It is particularly suited for research prototyping, model intercomparison studies, and educational applications in coastal engineering, fluid mechanics, and numerical modeling.
 
-# 1. Statement of need
+# Statement of need
 
 Numerical modeling of coastal processes, such as wave propagation, shallow water flow, and pollutant transport, typically relies on specialized software frameworks that are often complex to configure, extend, or adapt to new applications. Tools like SWAN, ADCIRC, and OpenFOAM, although powerful, present significant barriers due to their steep learning curves and rigid internal structures. Studies have shown that more computationally demanding models do not necessarily yield higher accuracy, especially when simpler models are tuned effectively [@Lashley et al., 2020]. Furthermore, successful calibration of numerical models hinges on the ability to accurately represent key physical processes and structural features [@Simmons et al., 2017]. This complexity poses challenges both for researchers aiming to prototype models rapidly and for instructors seeking clear, demonstrable tools for teaching.
 
 pyCoastal addresses this issue by offering a lightweight and modular coastal modeling framework fully in Python. It is designed to prioritize clarity and reproducibility, allowing users to define simulations through human-readable YAML configuration files and execute them with minimal setup. The codebase provides reusable components for grid generation, numerical operators, time integration schemes, and boundary condition handling, supporting both classical and custom physical models with ease. Its structure is designed to support both research applications and instructional use in topics such as coastal hydrodynamics, numerical modeling, and environmental fluid mechanics. Moreover, the framework integrates numerous established coastal‑engineering formulations, such as wave run‑up, sediment transport, and boundary layer calculations, enabling users to compute essential coastal parameters with ease. As a result, this module functions as a versatile library suitable for both academic research and industrial applications. In conclusion, pyCoastal offers a balance of flexibility and structure suitable for a range of academic and applied contexts.
 
-# 2. Functionality
+# Functionality
 
 pyCoastal comprises a collection of interchangeable modules that may be employed independently or combined to construct comprehensive simulation workflows. The Grid module supplies the UniformGrid class for defining one dimensional and two dimensional structured meshes. The Operator module provides finite difference stencils for computing spatial derivatives such as gradient, divergence and Laplacian. The Physics modules implement models for shallow water dynamics, wave advection, pollutant transport and viscous flow. The Boundary module supports Dirichlet, Neumann, sponge layer and wall conditions to represent inflow, outflow and reflective behaviours. Simulation results may be visualised in real time through integration with Matplotlib animation capabilities. All aspects of a simulation—including grid geometry, physical parameters, solver settings and boundary definitions—are specified via a human readable YAML configuration file to ensure full parameterisation and reproducibility.
 
-# 3. Examples
+# Examples
 
 The main purpose of this package is to provide a fully python based tool that allows to build, test and play with fluid dynamics numerical modeling. In the following section, some of the pre-built cases are explained :
-
-### 3.1. Irregular wave generation
 
 The `generate_irregular_wave` function builds a band-limited random wave time series based on standard oceanographic spectra:
 
@@ -82,7 +77,7 @@ output:
   gauge: [100, 100]  # grid indices (i, j)
 ```
 
-**3.1.1. Pierson–Moskowitz (PM)** 
+**3.1.1. Pierson–Moskowitz (PM) spectrum** 
 
 This spectrum for a fully-developed sea [@Henrique et al., 2003] is defined as:
 
@@ -98,7 +93,7 @@ where:
 - $T_p$ is the peak wave period [s]  
 - $f$ is the frequency [Hz]  
 
-**3.1.2 JONSWAP** 
+**3.1.2 JONSWAP spectrum** 
 
 This spectrum modifies the PM with a peaked enhancement factor [@Hasselmann et al., 1973] as:
 
