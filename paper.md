@@ -8,10 +8,10 @@ tags:
 authors:
   - name: Stefano Biondi
   - orcid: 0009-0001-5737-6012
-  - affiliation: "1" 
+  - affiliation: 1 
 affiliations:
- - name: University of Florida, Gainesville, FL, United States
- -  index: 1
+  - name: University of Florida, Gainesville, FL, United States
+  - index: 1
 date: 17 July 2025
 
 bibliography: paper.bib
