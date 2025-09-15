@@ -153,7 +153,7 @@ $$
 To test, run:
 
 ```bash
-python examples/waves2D_irregular.py
+python examples/water_drop.py
 ```
 
 The output provides real-time animation, allowing users to visually observe expanding circular wavefronts and their reflections. Additionally, it is fully configurable via YAML, enabling easy adjustment of domain size, resolution, wave speed, CFL number, and simulation duration without modifying the code.
