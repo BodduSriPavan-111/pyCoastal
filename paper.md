@@ -1,21 +1,21 @@
 ---
-title: 'pyCoastal: a Python package for Numerical Modeling in Coastal Engineering'
+title: "pyCoastal: a Python package for numerical modeling in coastal engineering"
 tags:
   - Python
   - numerical modeling
-  - Coastal Engineering
-  - Computational Fluid Dynamics
+  - coastal engineering
+  - computational fluid dynamics
 authors:
   - name: Stefano Biondi
-  - orcid: 0009-0001-5737-6012
-  - affiliation: 1 
+    orcid: 0000-0000-0000-0000   # replace with your actual ORCID
+    affiliation: "1"
 affiliations:
- - name: University of Florida, United States
- - index: 1
+  - name: University of Florida, United States
+    index: 1
 date: 17 July 2025
-
 bibliography: paper.bib
 ---
+
 # Summary
 
 pyCoastal is an open-source Python framework for the numerical simulation of coastal hydrodynamics and scalar transport processes. It provides a modular and extensible platform for solving linear and nonlinear partial differential equations relevant to coastal systems, including wave propagation, pollutant dispersion, and viscous fluid dynamics. The framework supports structured 1D and 2D Cartesian grids, configurable through lightweight YAML files, and includes reusable components for grid generation, boundary condition management, numerical operators, and time integration schemes. Physical modules are implemented as standalone classes and can be easily composed or extended for prototyping and research. pyCoastal emphasizes clarity and reproducibility, with a strong focus on animated visualization, clean code structure, and pedagogical transparency. It is particularly suited for research prototyping, model intercomparison studies, and educational applications in coastal engineering, fluid mechanics, and numerical modeling.
