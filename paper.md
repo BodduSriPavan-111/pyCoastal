@@ -22,7 +22,7 @@ pyCoastal is an open-source Python framework for the numerical simulation of coa
 
 # Statement of need
 
-Numerical modeling of coastal processes, such as wave propagation, shallow water flow, and pollutant transport, typically relies on specialized software frameworks that are often complex to configure, extend, or adapt to new applications. Tools like SWAN, ADCIRC, and OpenFOAM, although powerful, present significant barriers due to their steep learning curves and rigid internal structures. Studies have shown that more computationally demanding models do not necessarily yield higher accuracy, especially when simpler models are tuned effectively [@Lashley et al., 2020]. Furthermore, successful calibration of numerical models hinges on the ability to accurately represent key physical processes and structural features [@Simmons et al., 2017]. This complexity poses challenges both for researchers aiming to prototype models rapidly and for instructors seeking clear, demonstrable tools for teaching.
+Numerical modeling of coastal processes, such as wave propagation, shallow water flow, and pollutant transport, typically relies on specialized software frameworks that are often complex to configure, extend, or adapt to new applications. Tools like SWAN, ADCIRC, and OpenFOAM, although powerful, present significant barriers due to their steep learning curves and rigid internal structures. Studies have shown that more computationally demanding models do not necessarily yield higher accuracy, especially when simpler models are tuned effectively [@Lashley2020]. Furthermore, successful calibration of numerical models hinges on the ability to accurately represent key physical processes and structural features [@Simmons2017]. This complexity poses challenges both for researchers aiming to prototype models rapidly and for instructors seeking clear, demonstrable tools for teaching.
 
 pyCoastal addresses this issue by offering a lightweight and modular coastal modeling framework fully in Python. It is designed to prioritize clarity and reproducibility, allowing users to define simulations through human-readable YAML configuration files and execute them with minimal setup. The codebase provides reusable components for grid generation, numerical operators, time integration schemes, and boundary condition handling, supporting both classical and custom physical models with ease. Its structure is designed to support both research applications and instructional use in topics such as coastal hydrodynamics, numerical modeling, and environmental fluid mechanics. Moreover, the framework integrates numerous established coastal‑engineering formulations, such as wave run‑up, sediment transport, and boundary layer calculations, enabling users to compute essential coastal parameters with ease. As a result, this module functions as a versatile library suitable for both academic research and industrial applications. In conclusion, pyCoastal offers a balance of flexibility and structure suitable for a range of academic and applied contexts.
 
@@ -79,7 +79,7 @@ output:
 
 **3.1.1. Pierson–Moskowitz (PM) spectrum** 
 
-This spectrum for a fully-developed sea [@Henrique et al., 2003] is defined as:
+This spectrum for a fully-developed sea [@Henrique2003] is defined as:
 
 $$
 S_{PM}(f) = \frac{5}{16} H_s^2 f_p^4 f^{-5}\
@@ -95,7 +95,7 @@ where:
 
 **3.1.2 JONSWAP spectrum** 
 
-This spectrum modifies the PM with a peaked enhancement factor [@Hasselmann et al., 1973] as:
+This spectrum modifies the PM with a peaked enhancement factor [@Hasselmann1973] as:
 
 $$
 S_{J}(f) = S_{PM}(f)\;\gamma^{\displaystyle
